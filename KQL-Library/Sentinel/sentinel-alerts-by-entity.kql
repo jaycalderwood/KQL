@@ -1,0 +1,1 @@
+SecurityAlert | extend Ent=tostring(CompromisedEntity) | summarize Alerts=count() by Ent | top 200 by Alerts desc

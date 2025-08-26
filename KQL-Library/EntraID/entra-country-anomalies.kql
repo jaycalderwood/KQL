@@ -1,0 +1,5 @@
+SigninLogs
+| extend Country=tostring(LocationDetails.countryOrRegion)
+| summarize Today=countif(TimeGenerated > ago(24h)), Prev=countif(TimeGenerated between (ago(7d) .. ago(1d))) by Country
+| extend Delta=Today - (Prev/6)
+| top 200 by Delta desc

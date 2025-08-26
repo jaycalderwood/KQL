@@ -1,0 +1,1 @@
+Resources | where type =~ 'microsoft.keyvault/vaults' | project name, resourceGroup, properties.enableRbacAuthorization

@@ -1,0 +1,1 @@
+SecurityIncident | where Status !in ('Closed') | summarize Count=count() by Severity, Owner=Owner.displayName | order by Count desc

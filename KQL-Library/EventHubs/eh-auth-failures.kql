@@ -1,0 +1,1 @@
+AzureDiagnostics | where ResourceProvider =~ 'MICROSOFT.EVENTHUB' and Category =~ 'OperationalLogs' | where message has_any ('Unauthorized','Auth') | summarize Fails=count() by Resource, operationName_s | top 200 by Fails desc

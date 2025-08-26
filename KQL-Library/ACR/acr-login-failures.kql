@@ -1,0 +1,1 @@
+ContainerRegistryLoginEvents | where IsSuccess == false | summarize Failures=count() by Registry=RegistryUri, Identity | top 200 by Failures desc

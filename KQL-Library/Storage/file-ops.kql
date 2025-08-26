@@ -1,0 +1,1 @@
+StorageFileLogs | summarize Requests=count() by OperationName, AuthenticationType, StatusText | top 200 by Requests desc

@@ -1,0 +1,5 @@
+OfficeActivity | where Workload=='Exchange' and Operation in ('New-InboxRule','Set-InboxRule')
+| extend P=parse_json(Parameters)
+| extend ForwardTo=tostring(P.ForwardTo), RedirectTo=tostring(P.RedirectTo), ForwardAsAttachmentTo=tostring(P.ForwardAsAttachmentTo)
+| where isnotempty(ForwardTo) or isnotempty(RedirectTo) or isnotempty(ForwardAsAttachmentTo)
+| project TimeGenerated, UserId, Operation, ForwardTo, RedirectTo, ForwardAsAttachmentTo, ClientIP

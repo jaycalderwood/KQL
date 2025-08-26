@@ -1,0 +1,1 @@
+AzureDiagnostics | where Category=='ApplicationGatewayPerformanceLog' | summarize AvgMs=avg(todouble(totalTimeTaken_s)) by resourceId | top 200 by AvgMs desc

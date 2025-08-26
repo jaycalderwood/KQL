@@ -1,0 +1,1 @@
+AZFWNetworkRule | where Action == 'Allow' | summarize Allowed=count() by Rule, Protocol | top 200 by Allowed desc

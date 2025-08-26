@@ -1,0 +1,1 @@
+AzureDiagnostics | where Category == 'ApplicationGatewayAccessLog' | summarize Hits=count() by tostring(requestUri_s) | top 200 by Hits desc

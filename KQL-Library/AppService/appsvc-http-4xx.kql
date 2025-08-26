@@ -1,0 +1,1 @@
+AppServiceHTTPLogs | where ScStatus between (400 .. 499) | summarize Count=count() by CsUriStem | top 200 by Count desc

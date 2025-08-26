@@ -1,0 +1,1 @@
+SigninLogs | where tostring(ConditionalAccessStatus) =~ 'failure' | mv-expand pol = ConditionalAccessPolicies | summarize Fails=count() by Policy=tostring(pol.policy), Result=tostring(pol.result) | order by Fails desc

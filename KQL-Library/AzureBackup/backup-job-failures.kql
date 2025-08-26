@@ -1,0 +1,1 @@
+AzureDiagnostics | where ResourceProvider =~ 'MICROSOFT.RECOVERYSERVICES' and Category has_any ('Backup','AzureBackup','Job') | where ResultType !~ 'Success' or resultType_s !~ 'Success' | summarize Failures=count() by Resource, OperationName, ResultType, ResourceGroup | top 200 by Failures desc

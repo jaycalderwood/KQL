@@ -1,0 +1,1 @@
+AZKVAuditLogs | where OperationName has_any ('KeyCreate','KeyGet','KeySign','KeyUnwrapKey','KeyWrapKey') | summarize Ops=count() by OperationName, Identity=tostring(Identity) | top 200 by Ops desc

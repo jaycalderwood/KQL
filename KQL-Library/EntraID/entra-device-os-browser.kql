@@ -1,0 +1,1 @@
+SigninLogs | summarize SignIns=count() by tostring(DeviceDetail.operatingSystem), tostring(DeviceDetail.browser) | top 200 by SignIns desc

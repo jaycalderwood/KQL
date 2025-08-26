@@ -1,0 +1,1 @@
+AzureDiagnostics | where Category has 'TriggerRuns' | summarize AvgMs=avg(todouble(durationMs_d)), Runs=count() by resource_workflowName_s, triggerName_s | top 200 by AvgMs desc

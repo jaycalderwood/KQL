@@ -1,0 +1,1 @@
+SigninLogs | extend Country=tostring(LocationDetails.countryOrRegion) | summarize SignIns=count() by Country | top 200 by SignIns desc

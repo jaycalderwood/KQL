@@ -1,0 +1,1 @@
+CommonSecurityLog | where DeviceAction has 'deny' or DeviceAction has 'block' | summarize Denies=count() by DestinationIP, DestinationPort, DeviceVendor | top 200 by Denies desc

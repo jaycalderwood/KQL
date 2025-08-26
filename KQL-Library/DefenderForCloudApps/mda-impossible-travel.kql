@@ -1,0 +1,1 @@
+CloudAppEvents | where ActionType has 'impossible travel' or ActivityType has 'ImpossibleTravel' | project TimeGenerated, UserName, SourceCountry, DestinationCountry, IPAddress | order by TimeGenerated desc

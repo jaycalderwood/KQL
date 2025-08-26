@@ -1,0 +1,1 @@
+OfficeActivity | where Workload=='AzureActiveDirectory' and Operation has 'AddMemberToRole' | summarize Adds=count() by UserId, Role=tostring(parse_json(Parameters).Role) | top 200 by Adds desc

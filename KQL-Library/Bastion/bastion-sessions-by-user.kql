@@ -1,0 +1,1 @@
+MicrosoftAzureBastionAuditLogs | summarize Sessions=count() by UserName, ClientIp, TargetResource | top 200 by Sessions desc

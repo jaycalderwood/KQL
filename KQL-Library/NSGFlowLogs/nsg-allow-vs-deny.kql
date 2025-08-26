@@ -1,0 +1,1 @@
+AzureNetworkAnalytics_CL | summarize Allows=countif(Action_s =~ 'A'), Denies=countif(Action_s =~ 'D') by bin(TimeGenerated,1h) | order by TimeGenerated asc

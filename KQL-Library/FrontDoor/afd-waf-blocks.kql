@@ -1,0 +1,1 @@
+AzureDiagnostics | where Category=='FrontdoorWebApplicationFirewallLog' | extend action=tostring(action_s), clientIp=tostring(clientIp_s), ruleId=tostring(ruleId_s) | where action =~ 'Block' | summarize Blocks=count() by ruleId, clientIp | order by Blocks desc

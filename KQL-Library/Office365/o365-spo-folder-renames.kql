@@ -1,0 +1,1 @@
+OfficeActivity | where Workload in ('SharePoint','OneDrive') and Operation has 'FolderRenamed' | summarize Renames=count() by UserId, SiteUrl | top 200 by Renames desc

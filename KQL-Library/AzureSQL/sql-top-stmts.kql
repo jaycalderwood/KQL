@@ -1,0 +1,1 @@
+SQLSecurityAuditEvents | summarize Events=count() by statement | top 200 by Events desc

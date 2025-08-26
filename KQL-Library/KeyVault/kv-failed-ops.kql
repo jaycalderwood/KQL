@@ -1,0 +1,1 @@
+AZKVAuditLogs | where ResultSignature !~ 'Succeeded' or ResultType !~ 'Success' | summarize Failures=count() by OperationName, CallerIPAddress, AADOperationType | order by Failures desc

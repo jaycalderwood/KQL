@@ -1,0 +1,1 @@
+SigninLogs | summarize Count=count() by AppDisplayName, ResultType | order by Count desc

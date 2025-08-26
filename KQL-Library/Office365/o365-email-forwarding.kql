@@ -1,0 +1,3 @@
+OfficeActivity | where Workload=='Exchange' and Operation in ('Set-Mailbox','Set-InboxRule')
+| where Parameters has 'ForwardingSmtpAddress' or Parameters has 'ForwardTo'
+| project TimeGenerated, UserId, Operation, Parameters

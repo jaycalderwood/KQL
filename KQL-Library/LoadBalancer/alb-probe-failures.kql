@@ -1,0 +1,1 @@
+ALBHealthEvent | where HealthEventType =~ 'ProbeFailed' | summarize Events=count() by BackendIp, BackendPort, ResourceId

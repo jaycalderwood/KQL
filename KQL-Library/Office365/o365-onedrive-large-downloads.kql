@@ -1,0 +1,1 @@
+OfficeActivity | where Workload=='OneDrive' and Operation has 'FileDownloaded' | summarize Downloads=count() by UserId, SourceFileName, SiteUrl | top 200 by Downloads desc

@@ -1,0 +1,1 @@
+union isfuzzy=true DnsQueryLogs | summarize Queries=count() by ClientIP | top 200 by Queries desc

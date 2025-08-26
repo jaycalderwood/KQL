@@ -1,0 +1,1 @@
+SQLSecurityAuditEvents | where action_id == 'LGIF' | summarize Failures=count() by server_principal_name, client_ip | order by Failures desc

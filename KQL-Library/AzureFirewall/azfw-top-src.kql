@@ -1,0 +1,1 @@
+AZFWNetworkRule | summarize Events=count() by SourceIp | top 200 by Events desc

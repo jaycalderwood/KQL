@@ -1,0 +1,1 @@
+Alert | where AlertState !~ 'Closed' | summarize Active=count() by Severity, AlertRuleName, ResourceId | top 200 by Active desc

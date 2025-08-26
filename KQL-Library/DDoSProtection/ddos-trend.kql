@@ -1,0 +1,1 @@
+AzureDiagnostics | where Category in ('DDoSMitigationFlowLogs','DDoSProtectionNotifications') | summarize Events=count() by bin(TimeGenerated,1h), Category | order by TimeGenerated asc

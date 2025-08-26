@@ -1,0 +1,1 @@
+IntuneOperationalLogs | where Status has_any ('Failed','Error','NonCompliant') | summarize Count=count() by UserPrincipalName, DeviceName, Status, Category | order by Count desc

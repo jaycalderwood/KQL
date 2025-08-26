@@ -1,0 +1,1 @@
+ContainerRegistryRepositoryEvents | where Action =~ 'push' | summarize Pushes=count() by Repository, Tag | top 200 by Pushes desc

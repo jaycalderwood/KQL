@@ -1,0 +1,1 @@
+InsightsMetrics | where Name == 'cpuUsageNanoCores' | summarize AvgUsage=avg(Val) by bin(TimeGenerated, 5m), tostring(Tags['k8s.node.name']) | order by TimeGenerated asc

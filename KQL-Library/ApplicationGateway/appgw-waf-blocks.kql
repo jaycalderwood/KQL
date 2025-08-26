@@ -1,0 +1,1 @@
+AzureDiagnostics | where Category=='ApplicationGatewayFirewallLog' | extend details=parse_json(Message) | extend action=tostring(details.action), ruleId=tostring(details.ruleId), clientIp=tostring(details.clientIp) | where action =~ 'Blocked' | summarize Blocks=count() by ruleId, clientIp | top 200 by Blocks desc

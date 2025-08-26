@@ -1,0 +1,1 @@
+OfficeActivity | where Workload in ('SharePoint','OneDrive') and Operation has_any ('RoleUpdate','RoleAssignment') | summarize Changes=count() by UserId, Operation, SiteUrl | top 200 by Changes desc

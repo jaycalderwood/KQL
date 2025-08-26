@@ -1,0 +1,1 @@
+AzureDiagnostics | where ResourceProvider =~ 'MICROSOFT.SERVICEBUS' and Category =~ 'OperationalLogs' | where message has_any ('Throttled','QuotaExceeded') | summarize Events=count() by Resource, operationName_s | order by Events desc

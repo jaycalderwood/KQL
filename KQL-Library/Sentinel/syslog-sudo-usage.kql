@@ -1,0 +1,1 @@
+Syslog | where ProcessName =~ 'sudo' or SyslogMessage has 'sudo' | summarize Uses=count() by HostName, User | top 200 by Uses desc

@@ -1,0 +1,1 @@
+Resources | where type =~ 'microsoft.network/publicipaddresses' | project name, resourceGroup, location, ip=properties.ipAddress, sku=tostring(sku.name)

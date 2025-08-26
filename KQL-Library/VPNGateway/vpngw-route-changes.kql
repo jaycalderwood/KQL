@@ -1,0 +1,1 @@
+AzureDiagnostics | where Category == 'RouteDiagnosticLog' | summarize Changes=count() by Resource, Message | order by Changes desc

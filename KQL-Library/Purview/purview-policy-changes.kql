@@ -1,0 +1,1 @@
+PurviewSecurityLogs | where OperationName has_any ('Policy','Label','Retention') | summarize Changes=count() by OperationName, UserId | top 200 by Changes desc

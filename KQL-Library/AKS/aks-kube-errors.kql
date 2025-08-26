@@ -1,0 +1,1 @@
+KubeEvents | summarize Errors=countif(Level=='Error') by Reason, Namespace | top 200 by Errors desc

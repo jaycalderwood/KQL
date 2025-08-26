@@ -1,0 +1,1 @@
+AzureDiagnostics | where ResourceProvider =~ 'MICROSOFT.SERVICEBUS' and Category =~ 'OperationalLogs' | where tostring(statusCode_s) =~ 'ServerBusy' or message has 'ServerBusy' | summarize Hits=count() by Resource, operationName_s, callerIpAddress_s | top 200 by Hits desc

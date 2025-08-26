@@ -1,0 +1,1 @@
+WindowsEvent | where EventID == 7045 | project TimeGenerated, Computer, RenderedDescription

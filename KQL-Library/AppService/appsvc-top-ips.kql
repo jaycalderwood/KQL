@@ -1,0 +1,1 @@
+AppServiceHTTPLogs | summarize Calls=count() by CIp | top 200 by Calls desc

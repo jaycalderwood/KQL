@@ -1,0 +1,1 @@
+SecurityRecommendation | summarize Recs=count() by RecommendationDisplayName, Severity | top 200 by Recs desc

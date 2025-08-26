@@ -1,0 +1,1 @@
+AzureDiagnostics | where Category=='FrontdoorAccessLog' | extend status=toint(httpStatus_d) | where status >= 500 | summarize Errors=count() by bin(TimeGenerated,1h) | order by TimeGenerated asc

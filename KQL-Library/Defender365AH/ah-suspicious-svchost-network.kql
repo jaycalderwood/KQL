@@ -1,0 +1,1 @@
+DeviceNetworkEvents | where InitiatingProcessFileName =~ 'svchost.exe' and RemoteUrl has_any ('pastebin','github','ngrok','bit.ly') | project Timestamp, DeviceName, RemoteUrl, RemoteIP, InitiatingProcessCommandLine

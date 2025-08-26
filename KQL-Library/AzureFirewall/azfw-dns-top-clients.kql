@@ -1,0 +1,1 @@
+AZFWDnsQuery | summarize Queries=count() by SourceIp | top 200 by Queries desc

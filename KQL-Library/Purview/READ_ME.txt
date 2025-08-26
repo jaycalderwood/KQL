@@ -1,0 +1,1 @@
+PurviewDataSensitivityLogs, PurviewSecurityLogs, PurviewScanStatusLogs, DSMDataLabelingLogs.

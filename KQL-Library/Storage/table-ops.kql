@@ -1,0 +1,1 @@
+StorageTableLogs | summarize Requests=count() by OperationName, StatusText | top 200 by Requests desc

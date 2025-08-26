@@ -1,0 +1,1 @@
+AzureDiagnostics | where Category=='FrontdoorAccessLog' | summarize Requests=count() by host_s, toint(httpStatus_d) | order by Requests desc

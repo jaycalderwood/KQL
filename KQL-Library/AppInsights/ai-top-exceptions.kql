@@ -1,0 +1,1 @@
+AppExceptions | summarize Errors=count() by Type, Method, OuterMessage | top 200 by Errors desc

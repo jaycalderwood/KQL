@@ -1,0 +1,1 @@
+let wl = _GetWatchlist('YOUR_WATCHLIST_NAME'); SecurityAlert | lookup wl on $left.CompromisedEntity == $right.SearchKey

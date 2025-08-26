@@ -1,0 +1,1 @@
+Alert | summarize Alerts=count() by AlertRuleName | top 200 by Alerts desc

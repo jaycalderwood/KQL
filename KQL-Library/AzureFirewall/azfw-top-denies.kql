@@ -1,0 +1,8 @@
+let lookback=24h;
+union isfuzzy=true
+AZFWNetworkRule | where TimeGenerated >= ago(lookback) and Action == 'Deny'
+| project TimeGenerated, SrcIp=SourceIp, SrcPort=SourcePort, DstIp=DestinationIp, DstPort=DestinationPort, Protocol, Rule, RuleCollectionName
+union AZFWApplicationRule | where TimeGenerated >= ago(lookback) and Action == 'Deny'
+| project TimeGenerated, SrcIp=SourceIp, SrcPort=SourcePort, DstIp='', DstPort='', Protocol, Rule, RuleCollectionName, Fqdn
+| summarize Count=count() by SrcIp, DstIp, DstPort, Fqdn, Rule, RuleCollectionName
+| top 200 by Count desc

@@ -1,0 +1,1 @@
+AzureDiagnostics | where Category has 'EventGrid' and OperationName has 'EventSubscriptions' | summarize Ops=count() by OperationName, ResultType, Resource | top 200 by Ops desc

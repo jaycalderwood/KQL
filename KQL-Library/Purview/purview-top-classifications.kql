@@ -1,0 +1,1 @@
+PurviewDataSensitivityLogs | mv-expand c=Classifications | extend Cl=tostring(c.name) | summarize Hits=count() by Cl | top 200 by Hits desc

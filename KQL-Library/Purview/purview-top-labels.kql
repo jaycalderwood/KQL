@@ -1,0 +1,1 @@
+PurviewDataSensitivityLogs | mv-expand s=SensitivityLabelDetails | extend Label=tostring(s.name) | summarize Items=count() by Label | top 200 by Items desc

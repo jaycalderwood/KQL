@@ -1,0 +1,1 @@
+SecurityAlert | mv-expand Tactics | summarize Alerts=count() by tostring(Tactics) | top 200 by Alerts desc

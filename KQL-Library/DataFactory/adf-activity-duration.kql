@@ -1,0 +1,1 @@
+ADfActivityRun | summarize AvgMs=avg(DurationMs), Runs=count() by PipelineName, ActivityName, Status | where Runs > 10 | top 200 by AvgMs desc

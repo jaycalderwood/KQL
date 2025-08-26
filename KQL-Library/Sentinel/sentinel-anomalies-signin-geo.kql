@@ -1,0 +1,1 @@
+SigninLogs | extend Country=tostring(LocationDetails.countryOrRegion) | summarize Count=count() by Country, bin(TimeGenerated,1d) | order by Country asc, TimeGenerated asc

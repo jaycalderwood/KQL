@@ -1,0 +1,1 @@
+OfficeActivity | where Workload=='MicrosoftTeams' and Operation in ('MemberAdded','TeamMemberAdded','MemberRoleChanged') | extend AddedUser=tostring(parse_json(Parameters).User), TeamName=tostring(parse_json(Parameters).TeamName) | project TimeGenerated, AddedUser, TeamName, UserId, ClientIP

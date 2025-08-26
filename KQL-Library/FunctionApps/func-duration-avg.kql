@@ -1,0 +1,1 @@
+AzureDiagnostics | where Category has 'FunctionApp' | summarize AvgMs=avg(todouble(durationMs_d)), Runs=count() by tostring(FunctionName_s) | top 200 by AvgMs desc

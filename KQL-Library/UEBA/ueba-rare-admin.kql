@@ -1,0 +1,1 @@
+BehaviorAnalytics | where ActivityType has 'Admin' | where ActivityInsights.UserUncommonlyPerformedActivityAmongPeers == True | project TimeGenerated, UserName, ActivityType, ActivityInsights

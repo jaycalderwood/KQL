@@ -1,0 +1,1 @@
+ADfTriggerRun | summarize Runs=count() by TriggerName, Status | order by Runs desc

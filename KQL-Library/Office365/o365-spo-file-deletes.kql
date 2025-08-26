@@ -1,0 +1,1 @@
+OfficeActivity | where Workload in ('SharePoint','OneDrive') and Operation has 'FileDeleted' | summarize Deletes=count() by UserId, SiteUrl, SourceFileName | top 200 by Deletes desc

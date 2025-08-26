@@ -1,0 +1,1 @@
+AZKVAuditLogs | where OperationName has 'Policy' | summarize Changes=count() by OperationName | top 200 by Changes desc

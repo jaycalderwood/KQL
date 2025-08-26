@@ -1,0 +1,1 @@
+SecurityIncident | mv-expand AlertIds | summarize Incidents=count() by tostring(RuleName) | top 200 by Incidents desc

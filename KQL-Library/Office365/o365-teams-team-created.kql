@@ -1,0 +1,1 @@
+OfficeActivity | where Workload=='MicrosoftTeams' and Operation in ('TeamCreated') | summarize Created=count() by UserId, ClientIP | top 200 by Created desc

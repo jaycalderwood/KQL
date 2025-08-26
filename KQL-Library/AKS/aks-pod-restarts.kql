@@ -1,0 +1,1 @@
+KubePodInventory | summarize Restarts=max(todouble(RestartCount)) by Namespace, Pod=Name, ContainerName | top 200 by Restarts desc

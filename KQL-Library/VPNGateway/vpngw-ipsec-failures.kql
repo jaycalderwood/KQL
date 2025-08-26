@@ -1,0 +1,1 @@
+AzureDiagnostics | where Category == 'GatewayDiagnosticLog' | where Message has_any ('IKE','IPsec','authentication failed','no proposal chosen','negotiation failed') | summarize Failures=count() by Resource, Message | top 200 by Failures desc

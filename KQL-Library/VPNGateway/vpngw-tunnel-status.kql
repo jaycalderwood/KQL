@@ -1,0 +1,1 @@
+AzureDiagnostics | where Category == 'TunnelDiagnosticLog' | summarize Events=count(), AnyMsg=any(Message) by Resource, tunnelId_s, status_s | order by Events desc

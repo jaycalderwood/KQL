@@ -1,0 +1,1 @@
+SecurityEvent | where EventID == 4625 | summarize Failures=count() by Account, Computer, FailureReason | top 200 by Failures desc

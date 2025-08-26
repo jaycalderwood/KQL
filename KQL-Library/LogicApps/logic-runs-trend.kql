@@ -1,0 +1,1 @@
+AzureDiagnostics | where Category has 'WorkflowRuntime' | summarize Runs=count() by bin(TimeGenerated, 1h), resource_workflowName_s | order by TimeGenerated asc

@@ -1,0 +1,1 @@
+AzureNetworkAnalytics_CL | where Action_s =~ 'D' or FlowStatus_s =~ 'Deny' | summarize Flows=count() by SrcIp=srcIp_s, DestIp=destIp_s, DestPort=tostring(destPort_d), Protocol=tostring(l4Protocol_s) | top 200 by Flows desc

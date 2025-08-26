@@ -1,0 +1,1 @@
+AzureDiagnostics | where ResourceProvider =~ 'MICROSOFT.EVENTHUB' and Category =~ 'OperationalLogs' | where message has 'Capture' and message has_any ('Failed','Error') | summarize Failures=count() by Resource, operationName_s | top 200 by Failures desc

@@ -1,0 +1,1 @@
+ALBHealthEvent | summarize Events=count() by bin(TimeGenerated,1h), HealthEventType | order by TimeGenerated asc

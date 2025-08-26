@@ -1,0 +1,1 @@
+ADFPipelineRun | where Status !~ 'Succeeded' | summarize Failures=count() by PipelineName, Status, FailureType | top 200 by Failures desc

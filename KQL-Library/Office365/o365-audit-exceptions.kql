@@ -1,0 +1,1 @@
+OfficeActivity | where Status !~ 'Succeeded' | summarize Errors=count() by Workload, Operation | top 200 by Errors desc

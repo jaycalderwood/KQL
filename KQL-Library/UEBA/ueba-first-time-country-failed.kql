@@ -1,0 +1,1 @@
+BehaviorAnalytics | where ActivityType == 'FailedLogOn' | where ActivityInsights.FirstTimeUserConnectedFromCountry == True | where ActivityInsights.CountryUncommonlyConnectedFromAmongPeers == True | project TimeGenerated, UserName, SrcIpAddr, ActivityInsights | order by TimeGenerated desc

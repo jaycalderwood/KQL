@@ -1,0 +1,7 @@
+let lookback = 7d;
+let older = (SigninLogs | where TimeGenerated < ago(lookback) | summarize by IPAddress);
+SigninLogs
+| where TimeGenerated >= ago(lookback)
+| where IPAddress !in (older)
+| summarize FirstSeen=min(TimeGenerated) by IPAddress, UserPrincipalName, AppDisplayName
+| order by FirstSeen asc

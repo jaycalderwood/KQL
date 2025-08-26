@@ -1,0 +1,1 @@
+AzureNetworkAnalytics_CL | summarize Flows=count() by DestIp=destIp_s | top 200 by Flows desc

@@ -1,0 +1,1 @@
+AppDependencies | summarize AvgMs=avg(DurationMs), Calls=count() by Target, DependencyType | top 200 by AvgMs desc

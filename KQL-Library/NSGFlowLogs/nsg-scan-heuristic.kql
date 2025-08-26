@@ -1,0 +1,1 @@
+AzureNetworkAnalytics_CL | where Action_s =~ 'D' or FlowStatus_s =~ 'Deny' | summarize Ports=dcount(destPort_d), Attempts=count() by SrcIp=srcIp_s, DestIp=destIp_s | where Ports >= 20 and Attempts >= 50 | order by Attempts desc

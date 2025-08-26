@@ -1,0 +1,1 @@
+IntuneAuditLogs | where OperationName has 'Assignment' | summarize Assignments=count() by InitiatedByUPN, AffectedObjectName | top 200 by Assignments desc

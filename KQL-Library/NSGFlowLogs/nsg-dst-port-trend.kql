@@ -1,0 +1,1 @@
+AzureNetworkAnalytics_CL | summarize Flows=count() by destPort_d, bin(TimeGenerated,1h) | order by TimeGenerated asc

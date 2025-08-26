@@ -1,0 +1,1 @@
+ThreatIntelligenceIndicator | join kind=innerunique (SecurityAlert) on $left.NetworkIP == $right.RemoteIP | summarize Hits=count() by IndicatorId, ProductName

@@ -1,0 +1,1 @@
+Syslog | where SeverityLevel >= 3 | summarize Errors=count() by HostName, ProcessName | top 200 by Errors desc

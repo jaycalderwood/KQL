@@ -1,0 +1,1 @@
+Event | where Source == 'Microsoft-Windows-DNS-Client' | summarize Queries=count() by Computer, bin(TimeGenerated,1h) | order by TimeGenerated asc

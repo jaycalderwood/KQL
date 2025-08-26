@@ -1,0 +1,1 @@
+AADProvisioningLogs | where ResultType !~ 'Success' | summarize Errors=count(), AnyMsg=any(ResultDescription) by TargetDisplayName, SourceSystem, ResultType | top 200 by Errors desc

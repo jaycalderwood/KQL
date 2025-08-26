@@ -1,0 +1,1 @@
+AzureDiagnostics | where ResourceProvider =~ 'MICROSOFT.RECOVERYSERVICES' and OperationName has 'Restore' | summarize Restores=count() by OperationName, Resource, ResultType, CallerIpAddress | order by Restores desc

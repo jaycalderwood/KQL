@@ -1,0 +1,1 @@
+AppServiceConsoleLogs | where Message has_any ('Exception','ERROR','Error') | project TimeGenerated, Level, Message | order by TimeGenerated desc

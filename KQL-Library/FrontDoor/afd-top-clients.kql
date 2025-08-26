@@ -1,0 +1,1 @@
+AzureDiagnostics | where Category=='FrontdoorAccessLog' | summarize Requests=count() by clientIp_s | top 200 by Requests desc

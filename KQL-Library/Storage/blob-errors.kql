@@ -1,0 +1,1 @@
+StorageBlobLogs | where tostring(StatusText) !~ 'Success' | summarize Errors=count() by CallerIpAddress, OperationName, StatusText | top 200 by Errors desc

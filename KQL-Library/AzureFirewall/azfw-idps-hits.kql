@@ -1,0 +1,1 @@
+AZFWIdpsSignature | summarize Hits=count() by SignatureId, SignatureName, Action | top 200 by Hits desc

@@ -1,0 +1,1 @@
+ContainerLog | where LogMessage has 'Pulling image' | summarize Pulls=count() by Image=tostring(split(LogMessage,' ')[-1]) | top 200 by Pulls desc

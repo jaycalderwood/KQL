@@ -1,0 +1,1 @@
+AzureDiagnostics | where Category in ('GatewayLogs','GatewayRequests') | summarize Calls=count() by ApiName=tostring(apiName_s) | top 200 by Calls desc

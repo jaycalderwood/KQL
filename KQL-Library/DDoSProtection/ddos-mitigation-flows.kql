@@ -1,0 +1,1 @@
+AzureDiagnostics | where Category == 'DDoSMitigationFlowLogs' | summarize Flows=count() by publicIpAddress_s, attackVector_s, mitigationReason_s | top 200 by Flows desc

@@ -1,0 +1,1 @@
+OfficeActivity | where Workload=='SharePoint' and Status !~ 'Succeeded' | summarize Errors=count() by Operation, SiteUrl | top 200 by Errors desc

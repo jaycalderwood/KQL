@@ -1,0 +1,1 @@
+SecurityRecommendation | where Status !~ 'Completed' | summarize Open=count() by RecommendationDisplayName, ResourceId | top 200 by Open desc

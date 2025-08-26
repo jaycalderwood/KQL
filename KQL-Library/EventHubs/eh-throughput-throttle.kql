@@ -1,0 +1,1 @@
+AzureDiagnostics | where ResourceProvider =~ 'MICROSOFT.EVENTHUB' and Category =~ 'OperationalLogs' | where message has_any ('throttle','quota','exceeded') | summarize Events=count() by Resource, operationName_s | order by Events desc

@@ -1,0 +1,1 @@
+CloudAppEvents | where ActionType has_any ('Consent to application','App consented','OAuthAppAdded') | summarize Consents=count() by UserName, AppName=tostring(TargetAppName), IPAddress, ActionType | top 200 by Consents desc

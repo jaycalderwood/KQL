@@ -1,0 +1,1 @@
+SecurityAlert | summarize Alerts=count() by bin(TimeGenerated, 1d) | order by TimeGenerated asc

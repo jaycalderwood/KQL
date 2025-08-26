@@ -1,0 +1,1 @@
+AzureDiagnostics | where Category == 'ApplicationGatewayAccessLog' | extend status=toint(httpStatus_d), uri=tostring(requestUri_s) | where status between (400 .. 499) | summarize Errors=count() by status, uri | top 200 by Errors desc

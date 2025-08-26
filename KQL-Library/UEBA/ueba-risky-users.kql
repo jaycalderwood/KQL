@@ -1,0 +1,1 @@
+BehaviorAnalytics | summarize Activities=count() by UserName, RiskLevel=tostring(ActivityInsights.UserRiskLevel) | top 200 by Activities desc

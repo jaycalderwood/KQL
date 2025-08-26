@@ -1,0 +1,29 @@
+// Resource-scoped variant (auto-filter by Azure resource)
+// Tokens are auto-filled by the runner when you pick a resource
+let __ResourceId = "{{ResourceId}}";
+let __ResourceName = "{{ResourceName}}";
+let __ResourceGroup = "{{ResourceGroup}}";
+let __SubscriptionId = "{{SubscriptionId}}";
+let __ResourceType = "{{ResourceType}}";
+let __Location = "{{Location}}";
+
+let __apply_resource_scope = (T:(*)) {{
+    T
+    | extend _rid   = tostring(column_ifexists('ResourceId', column_ifexists('resourceId', column_ifexists('resource_id_s', column_ifexists('resourceId_s','')))))
+    | extend _rname = tostring(column_ifexists('Resource', column_ifexists('resource', column_ifexists('resource_name_s', column_ifexists('resourceName_s','')))))
+    | extend _rtype = tostring(column_ifexists('ResourceType', column_ifexists('resourceType', column_ifexists('resourceType_s',''))))
+    | extend _rg    = tostring(column_ifexists('ResourceGroup', column_ifexists('resourceGroup', column_ifexists('resource_group_s',''))))
+    | extend _sub   = tostring(column_ifexists('SubscriptionId', column_ifexists('subscriptionId', column_ifexists('subscription_id_s',''))))
+    | extend _loc   = tostring(column_ifexists('Location', column_ifexists('location', column_ifexists('location_s',''))))
+    | where (isempty(__ResourceId) or _rid has __ResourceId)
+      and (isempty(__ResourceName) or _rname has __ResourceName)
+      and (isempty(__ResourceType) or _rtype has __ResourceType)
+      and (isempty(__ResourceGroup) or _rg has __ResourceGroup)
+      and (isempty(__SubscriptionId) or _sub has __SubscriptionId)
+      and (isempty(__Location) or _loc has __Location)
+}};
+
+(
+AppServiceHTTPLogs | summarize Calls=count() by CIp | top 200 by Calls desc
+)
+| invoke __apply_resource_scope

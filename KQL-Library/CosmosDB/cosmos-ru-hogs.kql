@@ -1,0 +1,1 @@
+union isfuzzy=true CosmosDBDataPlaneRequests | project TimeGenerated, DatabaseName, ContainerName, OperationName, RequestCharge | summarize AvgRU=avg(RequestCharge), Calls=count() by DatabaseName, ContainerName, OperationName | top 200 by AvgRU desc

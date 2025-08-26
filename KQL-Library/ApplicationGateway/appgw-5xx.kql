@@ -1,0 +1,1 @@
+AzureDiagnostics | where Category == 'ApplicationGatewayAccessLog' | extend status=toint(httpStatus_d), clientIp=tostring(clientIP_s), uri=tostring(requestUri_s) | where status >= 500 | summarize Count=count() by status, uri, clientIp | top 200 by Count desc

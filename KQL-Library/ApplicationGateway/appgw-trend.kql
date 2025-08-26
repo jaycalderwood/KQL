@@ -1,0 +1,1 @@
+AzureDiagnostics | where Category == 'ApplicationGatewayAccessLog' | summarize Requests=count() by bin(TimeGenerated, 1h) | order by TimeGenerated asc

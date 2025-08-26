@@ -1,0 +1,1 @@
+Alert | summarize Alerts=count() by bin(TimeGenerated, 1h), Severity | order by TimeGenerated asc

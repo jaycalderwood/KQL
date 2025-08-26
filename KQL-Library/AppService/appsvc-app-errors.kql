@@ -1,0 +1,1 @@
+AppServiceAppLogs | where Message has_any ('Exception','ERROR','Error') | summarize Count=count() by Level, substring(Message,0,200) | top 200 by Count desc

@@ -1,0 +1,1 @@
+SigninLogs | where Status.failureReason has_any ('token','invalid','expired') | summarize Count=count() by Status=tostring(Status.failureReason) | top 200 by Count desc

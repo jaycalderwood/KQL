@@ -1,0 +1,1 @@
+Alert | summarize Alerts=count() by ResourceId, Severity | top 200 by Alerts desc

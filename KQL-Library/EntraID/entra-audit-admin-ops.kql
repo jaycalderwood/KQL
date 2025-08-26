@@ -1,0 +1,1 @@
+AuditLogs | where OperationName matches regex '^(Add|Update|Delete|Set)' | summarize Actions=count() by OperationName, Category, ActivityDisplayName | top 200 by Actions desc

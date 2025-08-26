@@ -1,0 +1,1 @@
+SigninLogs | extend ClientApp=tostring(ClientAppUsed) | where ClientApp has_any ('Legacy','ActiveSync','IMAP','POP','SMTP') | summarize SignIns=count() by UserPrincipalName, ClientApp | top 200 by SignIns desc

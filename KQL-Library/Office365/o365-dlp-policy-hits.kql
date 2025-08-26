@@ -1,0 +1,1 @@
+OfficeActivity | where Operation has 'Dlp' or Operation has 'DLP' | summarize Hits=count() by Operation, UserId | top 200 by Hits desc

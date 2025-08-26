@@ -1,0 +1,1 @@
+SigninLogs | summarize SignIns=count() by tostring(Interactive), ResultType | order by SignIns desc

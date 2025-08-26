@@ -1,0 +1,1 @@
+StorageBlobLogs | summarize Requests=count() by OperationName, AuthenticationType, StatusText | order by Requests desc

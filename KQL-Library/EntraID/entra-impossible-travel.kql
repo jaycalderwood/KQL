@@ -1,0 +1,16 @@
+let lookback=14d; let kmh=900.0;
+SigninLogs
+| where TimeGenerated>=ago(lookback)
+| extend Lat=todouble(GeoLocation.Latitude), Lon=todouble(GeoLocation.Longitude)
+| where isnotempty(Lat) and isnotempty(Lon)
+| project TimeGenerated, UserPrincipalName, IPAddress, Lat, Lon
+| order by UserPrincipalName asc, TimeGenerated asc
+| serialize
+| extend pU=prev(UserPrincipalName), pT=prev(TimeGenerated), pLa=prev(Lat), pLo=prev(Lon)
+| where UserPrincipalName==pU
+| extend hrs=datetime_diff('hour', TimeGenerated, pT)*-1.0,
+         km=geo_distance_2points(Lat,Lon,pLa,pLo)/1000.0,
+         sp=km/iff(hrs==0,0.001,hrs)
+| where sp>kmh
+| project TimeGenerated, UserPrincipalName, km, hrs, sp, FromIP=prev(IPAddress), ToIP=IPAddress
+| order by sp desc

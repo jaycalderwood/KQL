@@ -1,0 +1,1 @@
+SQLSecurityAuditEvents | where duration_milliseconds > 10000 | top 200 by duration_milliseconds desc

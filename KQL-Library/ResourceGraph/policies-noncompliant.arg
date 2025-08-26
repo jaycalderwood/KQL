@@ -1,0 +1,1 @@
+policyresources | where type =~ 'microsoft.policyinsights/policystates' and properties.complianceState =~ 'NonCompliant' | project resourceId=properties.resourceId, policy=properties.policyDefinitionName, reason=properties.nonComplianceMessage

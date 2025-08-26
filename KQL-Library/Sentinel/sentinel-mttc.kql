@@ -1,0 +1,1 @@
+SecurityIncident | where Status == 'Closed' | extend DurationMin=todouble(datetime_diff('minute', ClosedTime, CreatedTime)) | summarize MTTC_Minutes=avg(DurationMin) by Severity | order by MTTC_Minutes desc

@@ -1,0 +1,1 @@
+ContainerRegistryLoginEvents | where IsSuccess == true and OperationName =~ 'Pull' | summarize Pulls=count() by Identity | top 200 by Pulls desc

@@ -1,0 +1,1 @@
+AZFWNetworkRule | summarize Hits=count() by Rule, RuleCollectionName | top 200 by Hits desc

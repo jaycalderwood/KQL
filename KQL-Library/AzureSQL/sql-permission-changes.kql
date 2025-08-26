@@ -1,0 +1,1 @@
+SQLSecurityAuditEvents | where action_id in ('GPRM','RVPM','DENY','REVOKE','ADD') | summarize Changes=count() by action_name, server_principal_name | top 200 by Changes desc

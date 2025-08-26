@@ -1,0 +1,1 @@
+union isfuzzy=true AppServiceAppLogs | where Message has_any ('Exception','Function completed (Failure)','failed') | project TimeGenerated, Level, Message | union (AzureDiagnostics | where Category has 'FunctionApp' | project TimeGenerated, Level=level, Message=Message) | order by TimeGenerated desc

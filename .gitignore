@@ -1,0 +1,9 @@
+*.zip
+*.csv
+.DS_Store
+Thumbs.db
+.vscode/
+__pycache__/
+.venv/
+env/
+venv/

@@ -1,0 +1,1 @@
+AppRequests | where Success == 'False' | summarize Failures=count(), AvgMs=avg(DurationMs) by Url, ResponseCode | top 200 by Failures desc

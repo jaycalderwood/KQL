@@ -1,0 +1,1 @@
+AZFWDnsQuery | where ResponseCode != 'NOERROR' | summarize Failures=count() by QueryName, ResponseCode | top 200 by Failures desc

@@ -1,0 +1,1 @@
+SigninLogs | mv-expand auth = AuthenticationDetails | where tostring(auth.succeeded) == 'True' and tostring(auth.authenticationMethod) has 'MFA' | summarize Challenges=count() by UserPrincipalName, AppDisplayName | top 200 by Challenges desc

@@ -1,0 +1,1 @@
+SigninLogs | summarize SignIns=count() by ResourceDisplayName | top 200 by SignIns desc

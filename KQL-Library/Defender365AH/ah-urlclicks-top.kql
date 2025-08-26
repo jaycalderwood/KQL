@@ -1,0 +1,1 @@
+UrlClickEvents | summarize Clicks=count() by Url, ActionType | top 200 by Clicks desc

@@ -1,0 +1,1 @@
+Resources | where type =~ 'microsoft.network/networkinterfaces' | extend nsg=tostring(properties.networkSecurityGroup.id) | where isempty(nsg) | project name, resourceGroup, location

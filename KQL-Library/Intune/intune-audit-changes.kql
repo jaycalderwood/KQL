@@ -1,0 +1,1 @@
+IntuneAuditLogs | summarize Actions=count(), AnyOperation=any(OperationName) by InitiatedByUPN, Result=tostring(Result), AffectedObjectName | order by Actions desc

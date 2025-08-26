@@ -1,0 +1,1 @@
+OfficeActivity | where Workload in ('SharePoint','OneDrive') and Operation in ('AnonymousLinkCreated','SharingSet') | summarize Links=count() by UserId, SiteUrl | top 200 by Links desc

@@ -1,0 +1,1 @@
+SecurityEvent | where EventID in (4698,4702) | summarize Changes=count() by Account, Computer | top 200 by Changes desc

@@ -1,0 +1,1 @@
+AppServiceAppLogs | where Message has_any ('Warmup','cold start') | summarize Events=count() by bin(TimeGenerated, 1h) | order by TimeGenerated asc

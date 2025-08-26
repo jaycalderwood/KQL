@@ -1,0 +1,1 @@
+AppTraces | where SeverityLevel >= 3 | summarize Count=count() by Message, OperationName | top 200 by Count desc

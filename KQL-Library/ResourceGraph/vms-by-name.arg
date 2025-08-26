@@ -1,0 +1,1 @@
+Resources | where type =~ 'Microsoft.Compute/virtualMachines' | project name, location, resourceGroup, properties.hardwareProfile.vmSize | order by name asc

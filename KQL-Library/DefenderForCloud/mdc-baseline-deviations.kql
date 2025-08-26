@@ -1,0 +1,1 @@
+SecurityBaseline | where Status !~ 'Healthy' | summarize Deviations=count() by Benchmark, Severity | top 200 by Deviations desc

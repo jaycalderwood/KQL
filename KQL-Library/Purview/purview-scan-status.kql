@@ -1,0 +1,1 @@
+PurviewScanStatusLogs | summarize LastRun=max(TimeGenerated), Runs=count() by ScanName=tostring(scanName_s), Status=tostring(status_s) | order by LastRun desc

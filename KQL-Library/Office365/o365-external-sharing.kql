@@ -1,0 +1,1 @@
+OfficeActivity | where Workload in ('SharePoint','OneDrive') and Operation in ('SharingSet','AnonymousLinkCreated','AddedToSecureLink') | summarize Events=count() by UserId, Operation, SiteUrl, SourceFileName | top 200 by Events desc

@@ -1,0 +1,1 @@
+DeviceEvents | where ActionType in~ ('SensitiveProcessAccessBlocked','LsassCredentialDumpingAttempt') | project Timestamp, DeviceName, AccountName, ActionType, AdditionalFields

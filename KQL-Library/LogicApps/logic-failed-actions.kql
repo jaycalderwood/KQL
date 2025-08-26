@@ -1,0 +1,1 @@
+AzureDiagnostics | where Category has_any ('WorkflowRuntime','ActionRuns') | where tostring(status_s) !~ 'Succeeded' | summarize Failures=count() by resource_workflowName_s, actionName_s, status_s | top 200 by Failures desc

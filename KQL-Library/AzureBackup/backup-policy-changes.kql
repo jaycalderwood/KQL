@@ -1,0 +1,1 @@
+AzureDiagnostics | where ResourceProvider =~ 'MICROSOFT.RECOVERYSERVICES' and OperationName has_any ('Policy','Retention') | summarize Changes=count() by OperationName, Resource | top 200 by Changes desc

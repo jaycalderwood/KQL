@@ -1,0 +1,1 @@
+Application Gateway diagnostics: ApplicationGatewayAccessLog, ApplicationGatewayFirewallLog, ApplicationGatewayPerformanceLog (AzureDiagnostics).

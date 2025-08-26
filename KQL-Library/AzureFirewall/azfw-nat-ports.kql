@@ -1,0 +1,1 @@
+AZFWNatRule | summarize Translations=count() by DstIp=DestinationIp, DstPort=DestinationPort, Rule | top 200 by Translations desc

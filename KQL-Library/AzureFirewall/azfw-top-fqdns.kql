@@ -1,0 +1,1 @@
+AZFWApplicationRule | summarize Hits=count() by Fqdn | top 200 by Hits desc

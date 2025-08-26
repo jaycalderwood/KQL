@@ -1,0 +1,1 @@
+DeviceProcessEvents | where FileName =~ 'powershell.exe' and (ProcessCommandLine has '-enc' or ProcessCommandLine has '-EncodedCommand') | project Timestamp, DeviceName, AccountName, ProcessCommandLine

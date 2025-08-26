@@ -1,0 +1,1 @@
+SecurityAlert | where ProductName in ('Azure Security Center','Microsoft Defender for Cloud') | summarize Alerts=count() by ResourceId, Severity | order by Alerts desc

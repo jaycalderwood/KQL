@@ -1,0 +1,1 @@
+ContainerRegistryRepositoryEvents | where Action =~ 'delete' | summarize Deletes=count() by Repository, Tag | top 200 by Deletes desc

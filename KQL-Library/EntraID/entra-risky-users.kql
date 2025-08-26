@@ -1,0 +1,1 @@
+IdentityProtection_RiskyUsers | where RiskState !~ 'none' | summarize Users=count() by RiskLevel, RiskState | order by Users desc

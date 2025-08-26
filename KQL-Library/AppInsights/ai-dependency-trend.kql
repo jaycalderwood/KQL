@@ -1,0 +1,1 @@
+AppDependencies | summarize Calls=count(), AvgMs=avg(DurationMs) by bin(TimeGenerated,1h), Target | order by TimeGenerated asc

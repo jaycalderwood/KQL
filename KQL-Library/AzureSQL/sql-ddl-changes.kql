@@ -1,0 +1,1 @@
+SQLSecurityAuditEvents | where action_id in ('ALTR','CREAT','DRPG') | summarize Changes=count() by action_name, database_name, server_principal_name | order by Changes desc

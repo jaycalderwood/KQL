@@ -1,0 +1,4 @@
+SigninLogs
+| summarize Total=count(), Failures=countif(ResultType!=0) by AppDisplayName
+| extend FailureRate = todouble(Failures)/iif(Total==0,1,Total)
+| top 200 by FailureRate desc

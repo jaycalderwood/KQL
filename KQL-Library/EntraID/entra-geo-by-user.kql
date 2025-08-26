@@ -1,0 +1,4 @@
+SigninLogs
+| extend Country=tostring(LocationDetails.countryOrRegion)
+| summarize Countries=dcount(Country) by UserPrincipalName
+| top 200 by Countries desc

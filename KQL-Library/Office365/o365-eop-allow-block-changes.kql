@@ -1,0 +1,1 @@
+OfficeActivity | where Workload=='Exchange' and Operation has_any ('Set-HostedConnectionFilterPolicy','New-HostedContentFilterPolicy','Set-HostedContentFilterRule') | summarize Changes=count() by UserId, Operation | top 200 by Changes desc

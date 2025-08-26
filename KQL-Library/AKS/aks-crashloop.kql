@@ -1,0 +1,1 @@
+KubeEvents | where Reason =~ 'BackOff' or Message has 'CrashLoopBackOff' | project TimeGenerated, Namespace, PodName, Message | order by TimeGenerated desc

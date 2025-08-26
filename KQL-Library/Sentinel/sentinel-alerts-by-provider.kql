@@ -1,0 +1,1 @@
+SecurityAlert | summarize Alerts=count() by ProductName, ProviderName | top 200 by Alerts desc

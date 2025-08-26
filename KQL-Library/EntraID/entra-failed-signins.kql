@@ -1,0 +1,1 @@
+SigninLogs | where ResultType != 0 | summarize Failures=count() by UserPrincipalName, AppDisplayName, ResultType | top 200 by Failures desc

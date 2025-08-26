@@ -1,0 +1,1 @@
+AzureNetworkAnalytics_CL | summarize Flows=count() by SrcIp=srcIp_s | top 200 by Flows desc

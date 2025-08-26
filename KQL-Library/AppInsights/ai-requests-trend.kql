@@ -1,0 +1,1 @@
+AppRequests | summarize Requests=count(), AvgMs=avg(DurationMs) by bin(TimeGenerated, 1h) | order by TimeGenerated asc

@@ -1,0 +1,1 @@
+IdentityLogonEvents | project Timestamp, AccountUpn, IPAddress, Location | order by AccountUpn asc, Timestamp asc | serialize | extend pU=prev(AccountUpn), pT=prev(Timestamp), pL=prev(Location) | where AccountUpn==pU and pL != Location | extend Hours=datetime_diff('hour', Timestamp, pT)*-1.0 | where Hours>0 and Hours<1 | project Timestamp, AccountUpn, From=pL, To=Location, Hours

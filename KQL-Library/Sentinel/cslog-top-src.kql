@@ -1,0 +1,1 @@
+CommonSecurityLog | summarize Events=count() by SourceIP | top 200 by Events desc

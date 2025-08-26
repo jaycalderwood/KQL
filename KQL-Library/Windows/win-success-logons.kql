@@ -1,0 +1,1 @@
+SecurityEvent | where EventID == 4624 | summarize Logons=count() by Account, Computer, LogonTypeName | top 200 by Logons desc

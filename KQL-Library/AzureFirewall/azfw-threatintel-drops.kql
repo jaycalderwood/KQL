@@ -1,0 +1,1 @@
+AZFWThreatIntel | where Action =~ 'Deny' or Action =~ 'Drop' | summarize Drops=count() by ThreatDescription, SrcIp, DstIp | top 200 by Drops desc

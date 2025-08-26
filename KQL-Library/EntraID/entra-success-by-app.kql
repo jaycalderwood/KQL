@@ -1,0 +1,1 @@
+SigninLogs | where ResultType == 0 | summarize SignIns=count() by AppDisplayName | top 200 by SignIns desc

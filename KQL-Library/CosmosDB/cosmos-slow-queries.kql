@@ -1,0 +1,1 @@
+union isfuzzy=true CosmosDBDataPlaneRequests | project TimeGenerated, DurationMs, DatabaseName, ContainerName, OperationName, RequestCharge | where DurationMs > 1000 | top 200 by DurationMs desc

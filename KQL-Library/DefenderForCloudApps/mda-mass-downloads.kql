@@ -1,0 +1,1 @@
+CloudAppEvents | where ActionType has 'Download' or ActivityType has 'Download' | summarize Downloads=count() by UserName, IPAddress, TargetAppName=tostring(TargetAppName) | top 200 by Downloads desc

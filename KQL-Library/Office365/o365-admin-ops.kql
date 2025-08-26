@@ -1,0 +1,1 @@
+OfficeActivity | where UserId has '@' and Operation matches regex '^(Set|Add|Remove|New)-' | summarize Actions=count() by UserId, Operation | top 200 by Actions desc

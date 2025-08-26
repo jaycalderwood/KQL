@@ -1,0 +1,1 @@
+MicrosoftAzureBastionAuditLogs | where Result !~ 'Success' | summarize Failures=count() by UserName, TargetResource, Result | top 200 by Failures desc

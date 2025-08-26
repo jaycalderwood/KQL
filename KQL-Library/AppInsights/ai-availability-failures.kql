@@ -1,0 +1,1 @@
+AppAvailabilityResults | where Success == 'False' | summarize Failures=count() by Location, Name | top 200 by Failures desc

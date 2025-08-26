@@ -1,0 +1,1 @@
+SigninLogs | extend City=tostring(LocationDetails.city) | summarize SignIns=count() by City | top 200 by SignIns desc

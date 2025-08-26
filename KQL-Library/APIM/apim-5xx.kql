@@ -1,0 +1,1 @@
+AzureDiagnostics | where Category in ('GatewayLogs','GatewayRequests') | extend Status=toint(responseStatusCode_d) | where Status >= 500 | summarize Errors=count() by ApiName=tostring(apiName_s), OperationName=tostring(operationName_s) | top 200 by Errors desc

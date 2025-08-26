@@ -1,0 +1,1 @@
+CosmosDBDataPlaneRequests | summarize Calls=count() by OperationName | top 200 by Calls desc

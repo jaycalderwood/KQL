@@ -1,0 +1,1 @@
+AzureDiagnostics | where Category has 'EventGrid' and Message has 'Publish' and Message has_any ('Failed','Error') | summarize Failures=count() by Resource, OperationName, ResultType | order by Failures desc

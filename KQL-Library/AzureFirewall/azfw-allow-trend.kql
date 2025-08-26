@@ -1,0 +1,1 @@
+AZFWNetworkRule | where Action == 'Allow' | summarize Allows=count() by bin(TimeGenerated,1h) | order by TimeGenerated asc
