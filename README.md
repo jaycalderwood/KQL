@@ -1,4 +1,4 @@
-# KQL Library (Combined: Non-Scoped + Resource-Scoped)
+# KQL Library
 
 This repository contains a comprehensive KQL library for Azure/M365, **plus** a `ResourceScoped/` duplicate for every `.kql` that adds optional filtering by Azure resource (ResourceId, Name, Type, RG, Subscription, Location).
 
